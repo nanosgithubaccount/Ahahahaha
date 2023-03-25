@@ -67,14 +67,15 @@ local response = syn.request({
 })
 
 local botchats = {
-    "enjoy getting flinged | grief 0002 |",
-    "drop user in dms for whitelist | grief 0002 |",
-    "using antifling doesnt make me mad | grief 0002 |",
-    "for the dummies, yes. its a discoard tag. | grief 0002 |",
-    "hope u enjoy being seated | grief 0002 |",
-    "imagine not being whitelisted fr.. | grief 0002 |",
-    "worship nano | grief 0002 |",
-    "it takes under a minute to get whitelisted..  | grief 0002 |"
+    "enjoy getting flinged",
+    "drop user in dms for whitelist",
+    "using antifling doesnt make me mad",
+    "for the dummies, yes. its a discoard tag.",
+    "hope u enjoy being seated",
+    "imagine not being whitelisted fr..",
+    "worship nano & alex",
+    "it takes under a minute to get whitelisted..",
+    "grief 0002"
 }
 
 local Whitelisted_OnlyForTheServer = {}
