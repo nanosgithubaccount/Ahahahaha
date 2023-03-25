@@ -27,7 +27,9 @@ local Whitelisted = {
   "xapwa",
   "duoship",
   "bv7z",
-  "ProdKaiju"
+  "ProdKaiju",
+  "AceOfSpades12_4",
+  "Likka0999"
 }
 
 local Blacklisted = {
