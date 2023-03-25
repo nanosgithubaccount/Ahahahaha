@@ -38,7 +38,7 @@ local Blacklisted = {
 
 local Prefix = "?"
 
-local Looping = false -- [ignore]
+local Looping = false -- [ignore ]
 
 if game:GetService("ReplicatedStorage"):FindFirstChild("lIIl") then
     game:GetService("ReplicatedStorage"):FindFirstChild("lIIl"):Destroy()
