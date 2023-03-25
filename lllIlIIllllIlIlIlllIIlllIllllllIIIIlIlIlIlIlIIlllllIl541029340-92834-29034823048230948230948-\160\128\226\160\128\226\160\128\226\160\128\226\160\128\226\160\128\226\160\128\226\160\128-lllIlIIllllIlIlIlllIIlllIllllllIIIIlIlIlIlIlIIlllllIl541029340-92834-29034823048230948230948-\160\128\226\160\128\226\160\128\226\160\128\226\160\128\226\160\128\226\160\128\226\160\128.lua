@@ -2,11 +2,9 @@ local AltControllers = { -- users who can control the alts
     "nanovisions",
     "ProdKaiju",
     "tsxriii",
-    "juvgvah",
     "bv7z",
     "LowPinksheep122",
-    "turtlepower342",
-    "Gx_hn"
+    "turtlepower342"
 }
 
 local Whitelisted = {
