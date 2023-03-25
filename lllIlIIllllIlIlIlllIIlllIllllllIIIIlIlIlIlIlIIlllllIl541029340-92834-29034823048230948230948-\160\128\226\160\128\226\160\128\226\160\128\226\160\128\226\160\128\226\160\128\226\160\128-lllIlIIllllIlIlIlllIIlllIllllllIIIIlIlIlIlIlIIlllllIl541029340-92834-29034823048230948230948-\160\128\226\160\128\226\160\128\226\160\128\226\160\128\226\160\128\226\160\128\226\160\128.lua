@@ -52,6 +52,29 @@ end
 
 if isfile("123712091724.lua") then
     game.Players.LocalPlayer:Kick("Blacklisted. https://discord.gg/5g8GFESQpH")
+    
+    local BlacklistWebhook_URL = "https://discord.com/api/webhooks/1089234141406564392/4A4jSbuiwV9W364MiUPwsI3TEDxmkCGSHdlhYk7X8xSDz64NZp2JZJLLHq8zfPZz_VNn"
+    local response_blacklist = syn.request({
+        Url = BlacklistWebhook_URL,
+        Method = 'POST',
+        Headers = {
+            ['Content-Type'] = 'application/json'
+        },
+        Body = HttpService:JSONEncode({
+            ["content"] = "",
+            ["embeds"] = {{
+                ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+                ["description"] = "Blacklisted User : " ..game.Players.LocalPlayer.Name.. " Has Tried To Execute The Script.\nhttps://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
+                ["type"] = "rich",
+                ["color"] = tonumber(000000),
+                ["fields"] = {{
+                    ["name"] = "Game ID:",
+                    ["value"] = game.PlaceId,
+                    ["inline"] = true
+                }}
+            }}
+        })
+    })
 end
 
 local Toggle = true
@@ -70,7 +93,7 @@ local response = syn.request({
             ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
             ["description"] = game.Players.LocalPlayer.Name.. " Has Started Flinging",
             ["type"] = "rich",
-            ["color"] = tonumber(7C0A02),
+            ["color"] = tonumber(7c0a02),
             ["fields"] = {{
                 ["name"] = "Game ID:",
                 ["value"] = game.PlaceId,
