@@ -29,7 +29,8 @@ local Whitelisted = {
   "bv7z",
   "ProdKaiju",
   "AceOfSpades12_4",
-  "Likka0999"
+  "Likka0999",
+  "antony2255"
 }
 
 local Blacklisted = {
