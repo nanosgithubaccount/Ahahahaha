@@ -50,7 +50,7 @@ if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
     end
 end
 
-if isfile("123712091724") then
+if isfile("123712091724.lua") then
     game.Players.LocalPlayer:Kick("Blacklisted. https://discord.gg/5g8GFESQpH")
 end
 
