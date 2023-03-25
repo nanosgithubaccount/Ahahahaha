@@ -5,7 +5,7 @@ local AltControllers = {
 }
 
 local Whitelisted = {
-   "nanovisions"
+   "nanovisions",
    "Gx_hn"
 }
 
