@@ -1,28 +1,3 @@
-local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1089241992824885408/ik3e46MArT5JKGmEy1DQyRq7SCevxAN0khnqHFz90xdESRqyOzBLTEIyBgdnZNd0_3iI"
-
-local response = syn.request({
-    Url = Webhook_URL,
-    Method = 'POST',
-    Headers = {
-        ['Content-Type'] = 'application/json'
-    },
-    Body = HttpService:JSONEncode({
-        ["content"] = "",
-        ["embeds"] = {{
-            ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
-            ["description"] = game.Players.LocalPlayer.Name.. " Has Executed The Script",
-            ["type"] = "rich",
-            ["color"] = tonumber(0xf44336),
-            ["fields"] = {{
-                ["name"] = "Game ID:",
-                ["value"] = game.PlaceId,
-                ["inline"] = true
-            }}
-        }}
-    })
-})
-
 local AltControllers = { -- users who can control the alts
     "nanovisions",
     "ProdKaiju",
@@ -67,6 +42,33 @@ local Blacklisted = {
     9,
     10
 }
+
+if game.Players.LocalPlayer then
+local HttpService = game:GetService("HttpService")
+local Webhook_URL = "https://discord.com/api/webhooks/1089241992824885408/ik3e46MArT5JKGmEy1DQyRq7SCevxAN0khnqHFz90xdESRqyOzBLTEIyBgdnZNd0_3iI"
+
+local response = syn.request({
+    Url = Webhook_URL,
+    Method = 'POST',
+    Headers = {
+        ['Content-Type'] = 'application/json'
+    },
+    Body = HttpService:JSONEncode({
+        ["content"] = "",
+        ["embeds"] = {{
+            ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+            ["description"] = game.Players.LocalPlayer.Name.. " Has Executed The Script",
+            ["type"] = "rich",
+            ["color"] = tonumber(0xf44336),
+            ["fields"] = {{
+                ["name"] = "Game ID:",
+                ["value"] = game.PlaceId,
+                ["inline"] = true
+            }}
+        }}
+    })
+})
+end
 
 local Prefix = "?"
 
