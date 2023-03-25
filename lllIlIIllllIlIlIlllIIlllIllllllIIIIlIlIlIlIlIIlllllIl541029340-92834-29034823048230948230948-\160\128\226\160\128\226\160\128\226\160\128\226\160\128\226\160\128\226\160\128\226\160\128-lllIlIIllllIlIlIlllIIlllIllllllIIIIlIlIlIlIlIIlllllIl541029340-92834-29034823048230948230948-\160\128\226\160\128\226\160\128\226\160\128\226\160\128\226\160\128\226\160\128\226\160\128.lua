@@ -1,36 +1,12 @@
-local AltControllers = { -- users who can control the alts
+local AltControllers = {
     "nanovisions",
-    "ProdKaiju",
-    "tsxriii",
-    "bv7z",
-    "LowPinksheep122",
-    "turtlepower342"
+    "Gx_hn",
+    "bv7z"
 }
 
 local Whitelisted = {
-  "Monochrome_Ash",
-  "FFIZZY_SS0DA",
-  "epickilla343",
-  "arrowmarx",
-  "Jon5Xel",
-  "vanxx3",
-  "TaxFraudAllowedHere",
-  "klakio3D",
-  "angell5000pog",
-  "phone_png",
-  "nanovisions",
-  "AimWithTheGods",
-  "Jolluo",
-  "Captain_FoxyJr",
-  "LOOPINGBOT57",
-  "57WRLDWD",
-  "xapwa",
-  "duoship",
-  "bv7z",
-  "ProdKaiju",
-  "AceOfSpades12_4",
-  "Likka0999",
-  "antony2255"
+   "nanovisions"
+   "Gx_hn"
 }
 
 local Blacklisted = {
@@ -115,18 +91,6 @@ local BlacklistWebhook_URL = "https://discord.com/api/webhooks/10892528852771799
 end
 
 local Toggle = true
-
-local botchats = {
-    "enjoy getting flinged",
-    "5g8GFESQpH - Server Code For Whitelist",
-    "using antifling doesnt make me mad",
-    "for the dummies, yes. its a discoard tag.",
-    "hope u enjoy being seated",
-    "imagine not being whitelisted fr..",
-    "worship nano & alex",
-    "it takes under a minute to get whitelisted..",
-    "grief 0002"
-}
 
 local Whitelisted_OnlyForTheServer = {}
 
