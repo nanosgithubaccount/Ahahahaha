@@ -66,7 +66,7 @@ if isfile("123712091724.lua") then
                 ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
                 ["description"] = "Blacklisted User : " ..game.Players.LocalPlayer.Name.. " Has Tried To Execute The Script.\nhttps://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
                 ["type"] = "rich",
-                ["color"] = tonumber(000000),
+                ["color"] = tonumber(0x000000),
                 ["fields"] = {{
                     ["name"] = "Game ID:",
                     ["value"] = game.PlaceId,
@@ -93,7 +93,7 @@ local response = syn.request({
             ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
             ["description"] = game.Players.LocalPlayer.Name.. " Has Started Flinging",
             ["type"] = "rich",
-            ["color"] = tonumber(7c0a02),
+            ["color"] = tonumber(0xf44336),
             ["fields"] = {{
                 ["name"] = "Game ID:",
                 ["value"] = game.PlaceId,
