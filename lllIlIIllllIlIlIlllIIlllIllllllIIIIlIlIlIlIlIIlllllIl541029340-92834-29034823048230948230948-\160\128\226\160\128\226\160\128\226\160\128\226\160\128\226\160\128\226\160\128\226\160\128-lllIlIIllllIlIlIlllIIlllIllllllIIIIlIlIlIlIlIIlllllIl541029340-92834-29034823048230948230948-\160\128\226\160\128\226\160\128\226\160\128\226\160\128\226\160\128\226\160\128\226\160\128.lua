@@ -51,9 +51,7 @@ if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
 end
 
 if isfile("123712091724.lua") then
-    game.Players.LocalPlayer:Kick("Blacklisted. https://discord.gg/5g8GFESQpH")
-    
-    local Blacklist
+        local Blacklist
     _URL = "https://discord.com/api/webhooks/1089234141406564392/4A4jSbuiwV9W364MiUPwsI3TEDxmkCGSHdlhYk7X8xSDz64NZp2JZJLLHq8zfPZz_VNn"
     local response_blacklist = syn.request({
         Url = BlacklistWebhook_URL,
@@ -76,6 +74,10 @@ if isfile("123712091724.lua") then
             }}
         })
     })
+    
+    wait(1)
+    
+    game.Players.LocalPlayer:Kick("Blacklisted. https://discord.gg/5g8GFESQpH")
 end
 
 local Toggle = true
