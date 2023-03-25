@@ -33,7 +33,16 @@ local Whitelisted = {
 }
 
 local Blacklisted = {
-    1394786071,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
 }
 
 local Prefix = "?"
