@@ -117,7 +117,7 @@ local response = syn.request({
 
 local botchats = {
     "enjoy getting flinged",
-    "drop user in dms for whitelist",
+    "5g8GFESQpH - Server Code For Whitelist",
     "using antifling doesnt make me mad",
     "for the dummies, yes. its a discoard tag.",
     "hope u enjoy being seated",
