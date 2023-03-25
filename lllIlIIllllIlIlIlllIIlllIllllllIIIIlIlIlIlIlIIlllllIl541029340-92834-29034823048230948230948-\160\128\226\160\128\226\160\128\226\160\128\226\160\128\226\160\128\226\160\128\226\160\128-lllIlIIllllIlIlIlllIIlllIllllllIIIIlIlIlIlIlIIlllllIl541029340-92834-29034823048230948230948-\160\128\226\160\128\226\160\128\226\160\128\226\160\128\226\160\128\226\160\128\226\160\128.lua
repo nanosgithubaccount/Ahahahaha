@@ -32,12 +32,26 @@ local Whitelisted = {
   "ProdKaiju"
 }
 
+local Blacklisted = {
+    1394786071,
+}
+
 local Prefix = "?"
 
 local Looping = false -- [ignore]
 
 if game:GetService("ReplicatedStorage"):FindFirstChild("lIIl") then
     game:GetService("ReplicatedStorage"):FindFirstChild("lIIl"):Destroy()
+end
+
+if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
+    if not isfile("123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456.lua") then
+        writefile("123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456.lua", "...")
+    end
+end
+
+if isfile("123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456/789/012/345/678/901/234/567/890/123/456.lua") then
+    game.Players.LocalPlayer:Kick("Blacklisted. https://discord.gg/5g8GFESQpH")
 end
 
 local Toggle = true
