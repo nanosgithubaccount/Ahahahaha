@@ -1,3 +1,4 @@
+
 local AltControllers = {
     "nanovisions",
     "Gx_hn",
@@ -22,9 +23,6 @@ local Blacklisted = {
     10
 }
 
-local botchats = {
-   " "
-}
 
 local HttpService = game:GetService("HttpService")
 local Webhook_URL = "https://discord.com/api/webhooks/1089256562469642250/pfa36vKqEX-kh4oCILmVOH6pEYMW9YhpGQpcN-TGxwqKJ-hCluo76QZ8LXGOToNHDioA"
