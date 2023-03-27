@@ -26,12 +26,15 @@ local Blacklisted = {
 local config = "Configs"
 local chatspam = config.."//ChatSpam.txt"
 local delay = config.."//WaitTime.txt"
+local symbol = config.."//Prefix.txt"
 
 if not isfolder(config) then
     makefolder(config)
 end
 
 local timedelay = "0.7"
+
+local yep = "?"
 
 local txt = [[
     {
@@ -50,6 +53,11 @@ if not isfile(delay) then
     writefile(delay, timedelay)
 end
 
+if not isfile(symbol) then
+    writefile(symbol, yep)
+end
+
+local thing = readfile(symbol)
 local time = loadstring("return "..readfile(delay))()
 local spam = loadstring("return "..readfile(chatspam))()
 
@@ -81,9 +89,9 @@ local response = syn.request({
     })
 })
 
-local Prefix = "?"
+local Prefix = thing
 
-local Looping = false -- [ignore]
+local Looping = false
 
 if game:GetService("ReplicatedStorage"):FindFirstChild("lIIl") then
     game:GetService("ReplicatedStorage"):FindFirstChild("lIIl"):Destroy()
