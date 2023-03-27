@@ -1,21 +1,14 @@
-print([[
-   --[[
-
-░██████╗░██████╗░██╗███████╗███████╗
-██╔════╝░██╔══██╗██║██╔════╝██╔════╝
-██║░░██╗░██████╔╝██║█████╗░░█████╗░░
-██║░░╚██╗██╔══██╗██║██╔══╝░░██╔══╝░░
-╚██████╔╝██║░░██║██║███████╗██║░░░░░
-░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░░░░
-
-Commands: start, stop, bring, serverhop, leave, rejoin, goto, reset, fling, loopfling, wl
-
-Change Settings In Config (Folder's In Ur Exec's Workspace)
-
-grief#0002
-
-]]--
-]]
+print("░██████╗░██████╗░██╗███████╗███████╗")
+print("██╔════╝░██╔══██╗██║██╔════╝██╔════╝")
+print("██║░░██╗░██████╔╝██║█████╗░░█████╗░░")
+print("██║░░╚██╗██╔══██╗██║██╔══╝░░██╔══╝░░")
+print("╚██████╔╝██║░░██║██║███████╗██║░░░░░")
+print("░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░░░░")
+print("Commands: start, stop, bring, serverhop, leave, rejoin, goto, reset, fling, loopfling, wl")
+print("-----------------------------------------------------------------------------------------")
+print("Change Settings In Config (Folder's In Ur Exec's Workspace)")
+print("----------------------------------------------------------")
+print("grief#0002")
 
 local AltControllers = {
     "nanovisions",
