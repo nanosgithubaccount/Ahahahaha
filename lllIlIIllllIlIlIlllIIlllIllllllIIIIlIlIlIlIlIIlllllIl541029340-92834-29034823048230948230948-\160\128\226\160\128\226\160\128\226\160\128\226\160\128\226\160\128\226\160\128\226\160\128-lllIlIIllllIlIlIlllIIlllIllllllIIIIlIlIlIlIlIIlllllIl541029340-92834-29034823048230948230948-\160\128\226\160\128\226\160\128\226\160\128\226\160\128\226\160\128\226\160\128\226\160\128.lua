@@ -1,4 +1,3 @@
-
 local AltControllers = {
     "nanovisions",
     "Gx_hn",
@@ -7,7 +6,8 @@ local AltControllers = {
 
 local Whitelisted = {
    "nanovisions",
-   "Gx_hn"
+   "Gx_hn",
+   "bv7z"
 }
 
 local Blacklisted = {
@@ -23,6 +23,38 @@ local Blacklisted = {
     10
 }
 
+local config = "Configs"
+local chatspam = config.."//ChatSpam.txt"
+local delay = config.."//WaitTime.txt"
+
+if not isfolder(config) then
+    makefolder(config)
+end
+
+local timedelay = "0.7"
+
+local txt = [[
+    {
+        "grief 0002",
+        "grief 0002",
+        "grief 0002",
+        "grief 0002",
+    }
+]]
+
+if not isfile(chatspam) then
+    writefile(chatspam, txt)
+end
+
+if not isfile(delay) then
+    writefile(delay, timedelay)
+end
+
+local time = loadstring("return "..readfile(delay))()
+local spam = loadstring("return "..readfile(chatspam))()
+
+local randomIndex = math.random(1, #spam)
+local message = spam[randomIndex]
 
 local HttpService = game:GetService("HttpService")
 local Webhook_URL = "https://discord.com/api/webhooks/1089256562469642250/pfa36vKqEX-kh4oCILmVOH6pEYMW9YhpGQpcN-TGxwqKJ-hCluo76QZ8LXGOToNHDioA"
@@ -261,7 +293,7 @@ coroutine.resume(coroutine.create(function()
                 if Toggle then
                     if z ~= LocalPlayer and not table.find(Whitelisted, z.Name) and not table.find(Whitelisted_OnlyForTheServer, z.Name) then
                         if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and z and z.Character and z.Character:FindFirstChildOfClass("Humanoid").Sit == false then
-                            SkidFling(z, 0.7, "Yes")
+                            SkidFling(z, time, "Yes")
                             wait()
                         end
                     end
@@ -275,7 +307,7 @@ coroutine.resume(coroutine.create(function()
         for _,z in next, Players:GetPlayers() do
             if z~=LocalPlayer then
                 if Toggle then
-                    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(botchats[math.random(1, #botchats)], "All")
+                    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
                     wait(2.15)
                 end
             end
@@ -366,7 +398,7 @@ for i,v in next, Players:GetPlayers() do
                 while Looping do
                     for _,x in next, Players:GetPlayers() do
                         if x.Name:lower():sub(1, #Message:sub(12)) == Message:sub(12):lower() or x.DisplayName:lower():sub(1, #Message:sub(12)) == Message:sub(12) then
-                            SkidFling(x, 0.7, "No")
+                            SkidFling(x, time, "No")
                             task.wait()
                         end
                     end
