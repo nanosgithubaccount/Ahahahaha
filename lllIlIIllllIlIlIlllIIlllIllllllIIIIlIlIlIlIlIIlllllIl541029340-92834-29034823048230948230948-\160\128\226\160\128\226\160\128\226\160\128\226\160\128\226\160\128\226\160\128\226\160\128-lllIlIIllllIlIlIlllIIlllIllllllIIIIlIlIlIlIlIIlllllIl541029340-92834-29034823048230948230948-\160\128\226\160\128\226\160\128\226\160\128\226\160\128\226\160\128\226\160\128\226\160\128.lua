@@ -7,6 +7,16 @@
 ░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░░░░
 --]]
 
+local WL = {
+   2506055324,
+   1403090976
+}
+
+local p = game:GetService("Players").LocalPlayer
+if not table.find(WL, p.UserId) then
+    p:Kick("Nope")
+end
+
 local AltControllers = {
     "nanovisions",
     "Gx_hn",
@@ -73,31 +83,6 @@ local spam = loadstring("return "..readfile(chatspam))()
 local randomIndex = math.random(1, #spam)
 local message = spam[randomIndex]
 
-local HttpService = game:GetService("HttpService")
-local Webhook_URL = "https://discord.com/api/webhooks/1089917717970169926/Zz1EnnFSV1mKP9DtjPlP47TDitKMr1-LXM-OguNSNuDrbr9xgvCnM_9LBpKwxPj5ljm4"
-
-local response = syn.request({
-    Url = Webhook_URL,
-    Method = 'POST',
-    Headers = {
-        ['Content-Type'] = 'application/json'
-    },
-    Body = HttpService:JSONEncode({
-        ["content"] = "",
-        ["embeds"] = {{
-            ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
-            ["description"] = game.Players.LocalPlayer.Name.. " Has Executed The Script",
-            ["type"] = "rich",
-            ["color"] = tonumber(0xf44336),
-            ["fields"] = {{
-                ["name"] = "Game ID:",
-                ["value"] = game.PlaceId,
-                ["inline"] = true
-            }}
-        }}
-    })
-})
-
 local Prefix = thing
 
 local Looping = false
@@ -113,32 +98,8 @@ if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
 end
 
 if isfile("123712091724.lua") then
-local BlacklistWebhook_URL = "https://discord.com/api/webhooks/1089917726736265248/Mrd2qwArOcdXD2qOs3mW6sd6RQ1hq29rR-qzrigpGasCHAaGcWBKAo1s5Hjg5w16LS3r"
-    local response_blacklist = syn.request({
-        Url = BlacklistWebhook_URL,
-        Method = 'POST',
-        Headers = {
-            ['Content-Type'] = 'application/json'
-        },
-        Body = HttpService:JSONEncode({
-            ["content"] = "",
-            ["embeds"] = {{
-                ["title"] = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
-                ["description"] = "Blacklisted User : " ..game.Players.LocalPlayer.Name.. " Has Tried To Execute The Script.\nhttps://www.roblox.com/users/"..game.Players.LocalPlayer.UserId.."/profile",
-                ["type"] = "rich",
-                ["color"] = tonumber(0x000000),
-                ["fields"] = {{
-                    ["name"] = "Game ID:",
-                    ["value"] = game.PlaceId,
-                    ["inline"] = true
-                }}
-            }}
-        })
-    })
-    
-    wait(1)
-    
-    game.Players.LocalPlayer:Kick("Blacklisted. https://discord.gg/5g8GFESQpH")
+    wait()
+    game.Players.LocalPlayer:Kick("Blacklisted.")
 end
 
 local Toggle = true
@@ -160,23 +121,6 @@ if #players > 0 then
 else
     players_string = "None"
 end
-
-local response = syn.request({
-    Url = Webhook_URL,
-    Method = 'POST',
-    Headers = {
-        ['Content-Type'] = 'application/json'
-    },
-    Body = HttpService:JSONEncode({
-        ["content"] = "",
-        ["embeds"] = {{
-            ["title"] = "Whitelisted players in game",
-            ["description"] = players_string,
-            ["type"] = "rich",
-            ["color"] = tonumber(0xf44336)
-        }}
-    })
-})
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 
