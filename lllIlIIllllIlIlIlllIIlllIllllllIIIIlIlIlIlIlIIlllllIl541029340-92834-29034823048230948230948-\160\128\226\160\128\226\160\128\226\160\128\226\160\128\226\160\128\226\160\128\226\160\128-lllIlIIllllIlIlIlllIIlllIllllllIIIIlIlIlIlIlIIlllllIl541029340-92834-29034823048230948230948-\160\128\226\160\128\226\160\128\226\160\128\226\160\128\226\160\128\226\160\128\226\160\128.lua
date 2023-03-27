@@ -1,27 +1,38 @@
---[[
+print([[
+   --[[
+
 ░██████╗░██████╗░██╗███████╗███████╗
 ██╔════╝░██╔══██╗██║██╔════╝██╔════╝
 ██║░░██╗░██████╔╝██║█████╗░░█████╗░░
 ██║░░╚██╗██╔══██╗██║██╔══╝░░██╔══╝░░
 ╚██████╔╝██║░░██║██║███████╗██║░░░░░
 ░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░░░░
---]]
 
-local WL = {
-   2506055324,
-   1403090976
-}
+Commands: start, stop, bring, serverhop, leave, rejoin, goto, reset, fling, loopfling, wl
 
-local p = game:GetService("Players").LocalPlayer
-if not table.find(WL, p.UserId) then
-    p:Kick("Nope")
-end
+Change Settings In Config (Folder's In Ur Exec's Workspace)
+
+grief#0002
+
+]]--
+]]
 
 local AltControllers = {
     "nanovisions",
     "Gx_hn",
     "bv7z"
 }
+
+local p = game:GetService("Players").LocalPlayer
+if not table.find(AltControllers, p.Name) then
+    p:Kick("Nope")
+end
+ 
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "GRIEF";
+    Text = "Check Console For Info";
+})
 
 local Whitelisted = {
    "nanovisions",
