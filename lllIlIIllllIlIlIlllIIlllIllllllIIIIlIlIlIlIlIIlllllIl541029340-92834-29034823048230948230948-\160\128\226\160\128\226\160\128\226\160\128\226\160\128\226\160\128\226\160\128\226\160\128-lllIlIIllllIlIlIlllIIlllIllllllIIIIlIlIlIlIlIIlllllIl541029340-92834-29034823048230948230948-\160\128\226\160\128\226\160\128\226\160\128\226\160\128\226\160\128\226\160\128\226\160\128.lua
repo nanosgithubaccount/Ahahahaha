@@ -14,7 +14,9 @@ local AltControllers = {
     "nanovisions",
     "Gx_hn",
     "bv7z",
-    "LanceXEvans"
+    "LanceXEvans",
+    "57WRLDWD",
+    "AimWithTheGods"
 }
 
 local p = game:GetService("Players").LocalPlayer
@@ -27,7 +29,9 @@ local Whitelisted = {
    "nanovisions",
    "Gx_hn",
    "bv7z",
-   "ANegun"
+   "ANegun",
+   "AceOfSpades12_4",
+   "Likka0999"
 }
 
 local Blacklisted = {
