@@ -1,9 +1,9 @@
-print("░██████╗░██████╗░██╗███████╗███████╗")
-print("██╔════╝░██╔══██╗██║██╔════╝██╔════╝")
-print("██║░░██╗░██████╔╝██║█████╗░░█████╗░░")
-print("██║░░╚██╗██╔══██╗██║██╔══╝░░██╔══╝░░")
-print("╚██████╔╝██║░░██║██║███████╗██║░░░░░")
-print("░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░░░░")
+print("░██████╗░██████╗░██╗███████╗███████╗  ██╗░░░██╗░░███╗░░")
+print("██╔════╝░██╔══██╗██║██╔════╝██╔════╝  ██║░░░██║░████║░░")
+print("██║░░██╗░██████╔╝██║█████╗░░█████╗░░  ╚██╗░██╔╝██╔██║░░")
+print("██║░░╚██╗██╔══██╗██║██╔══╝░░██╔══╝░░  ░╚████╔╝░╚═╝██║░░")
+print("╚██████╔╝██║░░██║██║███████╗██║░░░░░  ░░╚██╔╝░░███████╗")
+print("░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░░░░  ░░░╚═╝░░░╚══════╝")
 print("Commands: start, stop, bring, serverhop, leave, rejoin, goto, reset, fling, loopfling, wl")
 print("-----------------------------------------------------------------------------------------")
 print("Change Settings In Config (Folder's In Ur Exec's Workspace)")
@@ -103,8 +103,12 @@ if isfile("123712091724.lua") then
     game.Players.LocalPlayer:Kick("Blacklisted.")
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "GRIEF";
+    Title = "Grief V1";
     Text = "Check Console For Info";
+})
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Discord";
+    Text = "discord.gg/TRShpFeqGK | grief#0002";
 })
 loadstring(game:HttpGet("https://raw.githubusercontent.com/nanosgithubaccount/g/main/g", true))()
 end
