@@ -25,7 +25,8 @@ end
 local Whitelisted = {
    "nanovisions",
    "Gx_hn",
-   "bv7z"
+   "bv7z",
+   "ANegun"
 }
 
 local Blacklisted = {
