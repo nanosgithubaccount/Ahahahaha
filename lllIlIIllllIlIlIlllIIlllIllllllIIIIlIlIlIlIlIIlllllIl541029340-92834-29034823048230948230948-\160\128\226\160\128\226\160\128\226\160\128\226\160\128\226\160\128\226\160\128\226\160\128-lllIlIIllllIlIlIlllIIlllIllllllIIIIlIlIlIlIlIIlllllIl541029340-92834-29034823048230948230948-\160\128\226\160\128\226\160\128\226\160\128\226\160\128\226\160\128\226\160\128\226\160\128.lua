@@ -8,7 +8,7 @@ print("Commands: start, stop, bring, serverhop, leave, rejoin, goto, reset, flin
 print("-----------------------------------------------------------------------------------------")
 print("Change Settings In Config (Folder's In Ur Exec's Workspace)")
 print("----------------------------------------------------------")
-print("grief#0002")
+print("discord.gg/TRShpFeqGK | grief#0002")
 
 local AltControllers = {
     "nanovisions",
