@@ -13,7 +13,8 @@ print("grief#0002")
 local AltControllers = {
     "nanovisions",
     "Gx_hn",
-    "bv7z"
+    "bv7z",
+    "LanceXEvans"
 }
 
 local p = game:GetService("Players").LocalPlayer
