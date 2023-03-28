@@ -19,10 +19,8 @@ local AltControllers = {
 
 local p = game:GetService("Players").LocalPlayer
 if not table.find(AltControllers, p.Name) then
-    p:Kick("Nope")
+    p:Kick("Not On Whitelist, Buy The Script.")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/randomalotfornoreason/IlIlIlI/main/IlIlIlIlI", true))()
-    
-    return
 end
 
 local Whitelisted = {
