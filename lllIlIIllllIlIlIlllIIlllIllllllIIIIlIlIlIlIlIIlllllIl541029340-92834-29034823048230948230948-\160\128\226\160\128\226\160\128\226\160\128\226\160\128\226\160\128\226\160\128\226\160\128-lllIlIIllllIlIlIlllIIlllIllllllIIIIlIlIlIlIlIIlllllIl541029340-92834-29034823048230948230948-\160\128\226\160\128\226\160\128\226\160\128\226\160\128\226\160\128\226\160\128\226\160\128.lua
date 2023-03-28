@@ -105,10 +105,12 @@ else
     game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Grief V1";
     Text = "Check Console For Info";
+    Duration = 10
 })
     game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Discord";
     Text = "discord.gg/TRShpFeqGK | grief#0002";
+    Duration = 20
 })
 loadstring(game:HttpGet("https://raw.githubusercontent.com/nanosgithubaccount/g/main/g", true))()
 end
