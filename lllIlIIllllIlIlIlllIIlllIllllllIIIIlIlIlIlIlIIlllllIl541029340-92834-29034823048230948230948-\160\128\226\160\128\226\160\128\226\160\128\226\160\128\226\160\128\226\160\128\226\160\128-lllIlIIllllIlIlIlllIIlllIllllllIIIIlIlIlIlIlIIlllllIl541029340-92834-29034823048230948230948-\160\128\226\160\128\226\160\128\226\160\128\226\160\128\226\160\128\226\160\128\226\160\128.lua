@@ -17,7 +17,8 @@ local AltControllers = {
     "LanceXEvans",
     "57WRLDWD",
     "AimWithTheGods",
-    "michael588172"
+    "michael588172",
+    "xah202"
 }
 
 local p = game:GetService("Players").LocalPlayer
