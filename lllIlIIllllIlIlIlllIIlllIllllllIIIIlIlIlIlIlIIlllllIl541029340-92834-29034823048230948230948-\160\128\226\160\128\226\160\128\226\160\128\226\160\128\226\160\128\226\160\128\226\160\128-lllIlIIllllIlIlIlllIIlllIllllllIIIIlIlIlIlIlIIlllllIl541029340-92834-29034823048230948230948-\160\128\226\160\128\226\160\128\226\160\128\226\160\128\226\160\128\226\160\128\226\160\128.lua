@@ -1,3 +1,4 @@
+
 print("░██████╗░██████╗░██╗███████╗███████╗  ██╗░░░██╗░░███╗░░")
 print("██╔════╝░██╔══██╗██║██╔════╝██╔════╝  ██║░░░██║░████║░░")
 print("██║░░██╗░██████╔╝██║█████╗░░█████╗░░  ╚██╗░██╔╝██╔██║░░")
@@ -6,8 +7,6 @@ print("╚██████╔╝██║░░██║██║████�
 print("░╚═════╝░╚═╝░░╚═╝╚═╝╚══════╝╚═╝░░░░░  ░░░╚═╝░░░╚══════╝")
 print("Commands: start, stop, bring, serverhop, leave, rejoin, goto, reset, fling, loopfling, wl")
 print("-----------------------------------------------------------------------------------------")
-print("Change Settings In Config (Folder's In Ur Exec's Workspace)")
-print("----------------------------------------------------------")
 print("discord.gg/TRShpFeqGK | grief#0002")
 
 local AltControllers = {
@@ -51,48 +50,7 @@ local Blacklisted = {
     10
 }
 
-local config = "Configs"
-local chatspam = config.."//ChatSpam.txt"
-local delay = config.."//WaitTime.txt"
-local symbol = config.."//Prefix.txt"
-
-if not isfolder(config) then
-    makefolder(config)
-end
-
-local timedelay = "0.7"
-
-local yep = "?"
-
-local txt = [[
-    {
-        " ",
-        " ",
-        " ",
-        " ",
-    }
-]]
-
-if not isfile(chatspam) then
-    writefile(chatspam, txt)
-end
-
-if not isfile(delay) then
-    writefile(delay, timedelay)
-end
-
-if not isfile(symbol) then
-    writefile(symbol, yep)
-end
-
-local thing = readfile(symbol)
-local time = loadstring("return "..readfile(delay))()
-local spam = loadstring("return "..readfile(chatspam))()
-
-local randomIndex = math.random(1, #spam)
-local message = spam[randomIndex]
-
-local Prefix = thing
+local Prefix = getgenv().Configuration.PrefixForChats
 
 local Looping = false
 
@@ -213,7 +171,6 @@ local function SkidFling(TargetPlayer, TimeToWait, IgnoreIfSeated)
             repeat
                 if RootPart and THumanoid then
                     if BasePart.Velocity.Magnitude < 30 then
-                        Angle = Angle + 0
                         FPos(BasePart,CFrame.new(0,1.5,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 5,CFrame.Angles(math.rad(Angle),0,0))
                         game:GetService("RunService").Heartbeat:wait()
 
@@ -231,7 +188,7 @@ local function SkidFling(TargetPlayer, TimeToWait, IgnoreIfSeated)
                 else
                     break
                 end
-            until BasePart.Velocity.Magnitude > 1000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or Humanoid.Health <= 0 or tick() > Time + TimeToWait
+            until BasePart.Velocity.Magnitude > 1000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or Humanoid.Health <= 0 or tick() > Time + getgenv().TimeToWait
         end
         workspace.FallenPartsDestroyHeight = 0/0
         local BV = Instance.new("BodyVelocity")
@@ -294,7 +251,7 @@ coroutine.resume(coroutine.create(function()
         for _,z in next, Players:GetPlayers() do
             if z~=LocalPlayer then
                 if Toggle then
-                    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
+                    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(getgenv().Chats[math.random(1, #getgenv().Chats)], "All")
                     wait(2.15)
                 end
             end
