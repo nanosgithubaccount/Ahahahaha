@@ -68,7 +68,7 @@ if isfile("123712091724.lua") then
     game.Players.LocalPlayer:Kick("Blacklisted.")
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Grief V1";
+    Title = "Grief V1.1";
     Text = "Check Console For Info";
     Duration = 10
 })
