@@ -1,4 +1,3 @@
-
 print("░██████╗░██████╗░██╗███████╗███████╗  ██╗░░░██╗░░███╗░░")
 print("██╔════╝░██╔══██╗██║██╔════╝██╔════╝  ██║░░░██║░████║░░")
 print("██║░░██╗░██████╔╝██║█████╗░░█████╗░░  ╚██╗░██╔╝██╔██║░░")
@@ -115,7 +114,7 @@ local rservice = game:GetService("RunService")
 coroutine.resume(coroutine.create(function() while wait(1) do pcall(function() for _,z in next, Players:GetPlayers() do if z ~= LocalPlayer and Toggle then for _,v in next, z.Backpack:GetDescendants() do if v:IsA'Sound' then v.TimePosition = nil end end end end end) end end)) 
 coroutine.resume(coroutine.create(function() while wait(1) do pcall(function() for _,z in next, Players:GetPlayers() do if z ~= LocalPlayer and Toggle then if z.Character and z.Character:FindFirstChildOfClass("Tool") then for _,v in next, z.Character:GetDescendants() do if v:IsA'Sound' then v.TimePosition = nil end end end end end end) end end))
 
-local function SkidFling(TargetPlayer, TimeToWait, IgnoreIfSeated)
+local function SkidFling(TargetPlayer, TTW, IgnoreIfSeated)
     local Character = LocalPlayer.Character
     local Humanoid = Character:FindFirstChildOfClass("Humanoid")
     local RootPart = Humanoid.RootPart
@@ -171,6 +170,7 @@ local function SkidFling(TargetPlayer, TimeToWait, IgnoreIfSeated)
             repeat
                 if RootPart and THumanoid then
                     if BasePart.Velocity.Magnitude < 30 then
+                        Angle = Angle + 0
                         FPos(BasePart,CFrame.new(0,1.5,0) + THumanoid.MoveDirection * BasePart.Velocity.Magnitude / 5,CFrame.Angles(math.rad(Angle),0,0))
                         game:GetService("RunService").Heartbeat:wait()
 
@@ -188,7 +188,7 @@ local function SkidFling(TargetPlayer, TimeToWait, IgnoreIfSeated)
                 else
                     break
                 end
-            until BasePart.Velocity.Magnitude > 1000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or Humanoid.Health <= 0 or tick() > Time + getgenv().TimeToWait
+            until BasePart.Velocity.Magnitude > 1000 or BasePart.Parent ~= TargetPlayer.Character or TargetPlayer.Parent ~= Players or not TargetPlayer.Character == TCharacter or Humanoid.Health <= 0 or tick() > Time + TTW
         end
         workspace.FallenPartsDestroyHeight = 0/0
         local BV = Instance.new("BodyVelocity")
@@ -237,7 +237,7 @@ coroutine.resume(coroutine.create(function()
                 if Toggle then
                     if z ~= LocalPlayer and not table.find(Whitelisted, z.Name) and not table.find(Whitelisted_OnlyForTheServer, z.Name) then
                         if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and z and z.Character and z.Character:FindFirstChildOfClass("Humanoid").Sit == false then
-                            SkidFling(z, time, "Yes")
+                            SkidFling(z, getgenv().Configuration.TimeToWait, "Yes")
                             wait()
                         end
                     end
