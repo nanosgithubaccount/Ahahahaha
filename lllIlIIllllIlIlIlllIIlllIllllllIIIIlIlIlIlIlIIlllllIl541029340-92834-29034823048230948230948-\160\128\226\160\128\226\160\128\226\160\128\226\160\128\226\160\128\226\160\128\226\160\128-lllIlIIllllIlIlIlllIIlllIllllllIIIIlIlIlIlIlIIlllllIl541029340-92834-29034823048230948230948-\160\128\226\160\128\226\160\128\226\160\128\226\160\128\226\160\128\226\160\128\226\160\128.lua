@@ -1,3 +1,4 @@
+
 print("░██████╗░██████╗░██╗███████╗███████╗  ██╗░░░██╗░░███╗░░")
 print("██╔════╝░██╔══██╗██║██╔════╝██╔════╝  ██║░░░██║░████║░░")
 print("██║░░██╗░██████╔╝██║█████╗░░█████╗░░  ╚██╗░██╔╝██╔██║░░")
@@ -50,6 +51,7 @@ local Blacklisted = {
 }
 
 local Prefix = getgenv().Configuration.PrefixForChats
+local servahop = getgenv().Configuration.Serverhop
 
 local Looping = false
 
@@ -259,7 +261,21 @@ coroutine.resume(coroutine.create(function()
     end
 end))
 
+local function Refresh()
+    local _ = nil
+    local _1 = Instance.new("Model")
+    local _2 = LocalPlayer.Character
+    LocalPlayer.Character = _1
+    LocalPlayer.Character = _2
+    wait(Players.RespawnTime - .1)
+    _ = LocalPlayer.Character.HumanoidRootPart.CFrame
+    _2:Destroy()
+    LocalPlayer.CharacterAdded:Wait()
+    LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = _
+end
+
 local function Serverhop()
+    wait(100)
     local GUIDs = {}
     local maxPlayers = 0
     local Http =
@@ -296,17 +312,8 @@ local function Serverhop()
     repeat wait() game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, GUIDs[math.random(1, 3)].id, LocalPlayer) until not LocalPlayer
 end
 
-local function Refresh()
-    local _ = nil
-    local _1 = Instance.new("Model")
-    local _2 = LocalPlayer.Character
-    LocalPlayer.Character = _1
-    LocalPlayer.Character = _2
-    wait(Players.RespawnTime - .1)
-    _ = LocalPlayer.Character.HumanoidRootPart.CFrame
-    _2:Destroy()
-    LocalPlayer.CharacterAdded:Wait()
-    LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = _
+if servahop == true then
+    Serverhop()
 end
 
 for i,v in next, Players:GetPlayers() do
