@@ -275,40 +275,13 @@ end
 
 local function Serverhop()
     wait(100)
-    local GUIDs = {}
-    local maxPlayers = 0
-    local Http =
-        game:GetService("HttpService"):JSONDecode(
-        game:HttpGet(
-            "https://games.roblox.com/v1/games/" ..
-                game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100&cursor="
-        )
-    )
-    for i = 1, 100 do
-        for i, v in next, Http.data do
-            if v.playing ~= v.maxPlayers and v.id ~= game.JobId then
-                maxPlayers = v.maxPlayers
-                table.insert(GUIDs, {id = v.id, users = v.playing})
-            end
-        end
-        if Http.nextPageCursor ~= null then
-            Http =
-                game:GetService("HttpService"):JSONDecode(
-                game:HttpGet(
-                    "https://games.roblox.com/v1/games/"
-                    ..
-                    game.PlaceId
-                    ..
-                    "/servers/Public?sortOrder=Asc&limit=100&cursor="
-                    ..
-                    Http.nextPageCursor
-                )
-            )
-        else
-            break
-        end
-    end
-    repeat wait() game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, GUIDs[math.random(1, 2)].id, LocalPlayer) until not LocalPlayer
+    local gameId = game.PlaceId
+    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGetAsync(string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Asc&limit=100", gameId))).data
+
+    if #servers > 0 then
+      local randomServer = servers[math.random(1, #servers)]
+      game:GetService("TeleportService"):TeleportToPlaceInstance(gameId, randomServer.id)
+   end
 end
 
 if servahop == true then
