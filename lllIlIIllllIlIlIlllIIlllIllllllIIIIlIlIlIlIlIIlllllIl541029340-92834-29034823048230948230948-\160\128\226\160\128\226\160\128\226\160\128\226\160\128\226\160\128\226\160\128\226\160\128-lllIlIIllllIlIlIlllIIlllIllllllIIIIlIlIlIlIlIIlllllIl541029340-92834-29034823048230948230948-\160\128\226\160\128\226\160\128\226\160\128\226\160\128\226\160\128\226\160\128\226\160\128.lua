@@ -309,7 +309,7 @@ local function Serverhop()
             break
         end
     end
-    repeat wait() game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, GUIDs[math.random(1, 3)].id, LocalPlayer) until not LocalPlayer
+    repeat wait() game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, GUIDs[math.random(1, 2)].id, LocalPlayer) until not LocalPlayer
 end
 
 if servahop == true then
