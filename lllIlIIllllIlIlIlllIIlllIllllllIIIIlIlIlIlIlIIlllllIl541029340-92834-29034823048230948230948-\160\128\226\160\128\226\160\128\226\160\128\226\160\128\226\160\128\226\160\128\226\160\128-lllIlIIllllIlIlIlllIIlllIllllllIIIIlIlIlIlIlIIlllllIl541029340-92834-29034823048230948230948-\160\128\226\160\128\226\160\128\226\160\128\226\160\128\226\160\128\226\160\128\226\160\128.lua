@@ -32,7 +32,8 @@ local Whitelisted = {
    "AceOfSpades12_4",
    "Likka0999",
    "That_emo1rat",
-   "michael588172"
+   "michael588172",
+   "ANegun"
 }
 
 local Blacklisted = {
