@@ -328,8 +328,6 @@ for i,v in next, Players:GetPlayers() do
                 end
             elseif Message == Prefix.."bring" then
                 LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 2)
-            elseif Message == Prefix.."serverhop" then
-                Serverhop()
             elseif Message == Prefix.."leave" then
                 game:shutdown()
             elseif Message == Prefix.."rejoin" then
@@ -374,7 +372,6 @@ for i,v in next, Players:GetPlayers() do
                         table.insert(Whitelisted_OnlyForTheServer, x.Name)
                     end
                 end
-            end
         end)
     end
 end
