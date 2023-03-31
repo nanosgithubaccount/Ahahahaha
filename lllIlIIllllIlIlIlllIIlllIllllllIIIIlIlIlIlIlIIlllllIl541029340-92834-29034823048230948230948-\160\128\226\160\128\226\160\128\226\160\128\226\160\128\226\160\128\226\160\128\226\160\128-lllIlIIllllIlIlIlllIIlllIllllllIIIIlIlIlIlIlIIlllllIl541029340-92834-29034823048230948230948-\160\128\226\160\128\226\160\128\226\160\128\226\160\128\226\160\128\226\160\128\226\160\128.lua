@@ -29,7 +29,6 @@ local Whitelisted = {
    "nanovisions",
    "Gx_hn",
    "bv7z",
-   "ANegun",
    "AceOfSpades12_4",
    "Likka0999",
    "That_emo1rat",
