@@ -274,11 +274,19 @@ local function Refresh()
 end
 
 local function Serverhop()
-    wait(100)
+    wait(60)
     local gameId = game.PlaceId
     local servers = game:GetService("HttpService"):JSONDecode(game:HttpGetAsync(string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Asc&limit=100", gameId))).data
 
     if #servers > 0 then
+       game:GetService("StarterGui"):SetCore("SendNotification", {
+         Title = "Notification";
+         Text = "Serverhopping!";
+         Duration = 20
+       })
+        
+        wait(.5)
+        
       local randomServer = servers[math.random(1, #servers)]
       game:GetService("TeleportService"):TeleportToPlaceInstance(gameId, randomServer.id)
    end
