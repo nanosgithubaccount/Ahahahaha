@@ -371,6 +371,7 @@ for i,v in next, Players:GetPlayers() do
                         table.insert(Whitelisted_OnlyForTheServer, x.Name)
                     end
                 end
+            end
         end)
     end
 end
