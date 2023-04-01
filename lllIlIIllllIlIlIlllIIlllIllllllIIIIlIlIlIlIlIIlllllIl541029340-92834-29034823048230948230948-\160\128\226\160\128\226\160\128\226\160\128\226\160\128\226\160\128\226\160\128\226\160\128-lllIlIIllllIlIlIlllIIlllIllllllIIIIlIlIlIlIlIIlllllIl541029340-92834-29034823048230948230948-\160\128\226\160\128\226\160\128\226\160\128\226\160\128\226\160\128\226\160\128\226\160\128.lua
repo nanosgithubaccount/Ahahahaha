@@ -100,6 +100,7 @@ local billboardGuiProperties = {
     AlwaysOnTop = true,
     StudsOffset = Vector3.new(0, 2, 0),
     Size = UDim2.new(2, 0, 2, 0), 
+    MaxDistance = math.huge
 }
 
 local textLabelProperties = {
