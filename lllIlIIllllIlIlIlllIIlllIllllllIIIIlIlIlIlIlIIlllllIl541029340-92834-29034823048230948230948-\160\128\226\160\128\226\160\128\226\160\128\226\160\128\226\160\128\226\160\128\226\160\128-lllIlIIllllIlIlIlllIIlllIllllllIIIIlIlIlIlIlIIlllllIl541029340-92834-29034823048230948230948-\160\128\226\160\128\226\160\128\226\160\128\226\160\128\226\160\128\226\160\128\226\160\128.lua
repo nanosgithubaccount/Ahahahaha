@@ -274,7 +274,7 @@ local function Refresh()
 end
 
 local function Serverhop()
-    wait(60)
+    wait(120)
     local gameId = game.PlaceId
     local servers = game:GetService("HttpService"):JSONDecode(game:HttpGetAsync(string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Asc&limit=100", gameId))).data
 
