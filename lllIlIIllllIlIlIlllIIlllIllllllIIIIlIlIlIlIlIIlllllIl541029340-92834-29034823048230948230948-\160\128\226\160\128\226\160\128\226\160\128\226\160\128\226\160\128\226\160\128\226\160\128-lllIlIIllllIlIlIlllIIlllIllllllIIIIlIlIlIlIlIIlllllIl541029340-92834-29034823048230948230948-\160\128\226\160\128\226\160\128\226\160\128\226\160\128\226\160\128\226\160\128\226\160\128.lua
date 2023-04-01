@@ -152,8 +152,10 @@ for i,v in next, game:GetService("Players"):GetPlayers() do
 	v.CharacterAdded:Connect(function(c)
 		c:WaitForChild("Humanoid")
 		c:WaitForChild("HumanoidRootPart")
-		AddLabel(v)
-	end)
+		pcall(function()
+                 AddLabel(v)
+                end)
+       end)
 end
 
 game:GetService("Players").PlayerAdded:Connect(function(Player)
