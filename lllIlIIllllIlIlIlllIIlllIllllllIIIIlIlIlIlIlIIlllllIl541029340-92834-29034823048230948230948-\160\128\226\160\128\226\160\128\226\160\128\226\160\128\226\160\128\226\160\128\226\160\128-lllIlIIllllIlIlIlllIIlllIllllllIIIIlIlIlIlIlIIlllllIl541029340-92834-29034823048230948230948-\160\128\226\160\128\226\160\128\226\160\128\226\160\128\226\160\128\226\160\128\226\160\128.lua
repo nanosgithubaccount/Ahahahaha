@@ -116,7 +116,6 @@ local function AddLabel(Player)
     
     local textLabel = Instance.new("TextLabel")
     textLabel.Parent = Player.Character.Head
-    textLabel.TextStrokeColor = Color3.fromRGB(255, 0, 0)
     textLabel.Name = "Tag"
     for key, value in pairs(textLabelProperties) do
         textLabel[key] = value
