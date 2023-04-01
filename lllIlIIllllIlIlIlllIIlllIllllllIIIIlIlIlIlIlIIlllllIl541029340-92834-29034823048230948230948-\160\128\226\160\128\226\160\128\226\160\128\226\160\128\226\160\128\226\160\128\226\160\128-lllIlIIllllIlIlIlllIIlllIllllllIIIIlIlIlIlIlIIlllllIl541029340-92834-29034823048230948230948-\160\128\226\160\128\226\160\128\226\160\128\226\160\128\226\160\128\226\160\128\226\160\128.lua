@@ -86,6 +86,84 @@ if not table.find(AltControllers, p.Name) then
     end
 end
 
+local Testers = {
+    "drawwithfriendruiner"
+}
+
+local billboardGuiProperties = {
+    Name = "PlayerTag",
+    Adornee = nil,
+    Enabled = true,
+    LightInfluence = 0,
+    ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
+    ResetOnSpawn = false,
+    AlwaysOnTop = true,
+    StudsOffset = Vector3.new(0, 2, 0),
+    Size = UDim2.new(2, 0, 2, 0), 
+}
+
+local textLabelProperties = {
+    Font = Enum.Font.SourceSansBold,
+    TextScaled = true,
+    Size = UDim2.new(1, 0, 1, 0),
+    BackgroundTransparency = 1
+}
+
+local function AddLabel(Player)
+    local hasAltControllerTag = table.find(AltControllers, Player.Name)
+    local hasTesterTag = table.find(Testers, Player.Name)
+    local hasOwnerTag = (Player.Name == "nanovisions" or Player.Name == "bv7z")
+    
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Parent = Player.Character.Head
+    textLabel.Name = "Tag"
+    for key, value in pairs(textLabelProperties) do
+        textLabel[key] = value
+    end
+    
+    if hasAltControllerTag and not hasTesterTag and not hasOwnerTag then
+        textLabel.Text = "Alt Controller"
+        textLabel.TextColor3 = Color3.fromRGB(102, 51, 153)
+    elseif hasTesterTag and not hasAltControllerTag and not hasOwnerTag then
+        textLabel.Text = "Tester"
+        textLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+    elseif hasOwnerTag and not hasAltControllerTag and not hasTesterTag then
+        textLabel.Text = "Owner"
+        textLabel.TextColor3 = Color3.new(1, 1, 1)
+    elseif hasAltControllerTag and hasOwnerTag then
+        textLabel.Text = "Owner"
+        textLabel.TextColor3 = Color3.new(1, 1, 1)
+    end
+    
+    if hasAltControllerTag or hasTesterTag or isOwner then
+        local billboardGui = Instance.new("BillboardGui")
+        for key, value in pairs(billboardGuiProperties) do
+            billboardGui[key] = value
+        end
+        billboardGui.Adornee = Player.Character.Head
+        billboardGui.Parent = Player.Character.Head
+        textLabel.Parent = billboardGui
+    end
+end
+
+for i,v in next, game:GetService("Players"):GetPlayers() do
+	AddLabel(v)
+	v.CharacterAdded:Connect(function(c)
+		c:WaitForChild("Humanoid")
+		c:WaitForChild("HumanoidRootPart")
+		AddLabel(v)
+	end)
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(Player)
+	AddLabel(Player)
+	Player.CharacterAdded:Connect(function(c)
+		c:WaitForChild("Humanoid")
+		c:WaitForChild("HumanoidRootPart")
+		AddLabel(Player)
+	end)
+end)
+
 local Toggle = true
 
 local Whitelisted_OnlyForTheServer = {}
