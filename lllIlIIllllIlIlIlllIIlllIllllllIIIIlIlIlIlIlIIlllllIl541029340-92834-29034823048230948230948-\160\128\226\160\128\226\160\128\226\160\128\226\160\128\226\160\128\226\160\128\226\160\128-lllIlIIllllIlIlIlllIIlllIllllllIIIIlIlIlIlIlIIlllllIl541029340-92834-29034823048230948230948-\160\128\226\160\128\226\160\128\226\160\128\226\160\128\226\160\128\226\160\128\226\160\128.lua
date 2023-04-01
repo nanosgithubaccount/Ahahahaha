@@ -116,7 +116,7 @@ local function AddLabel(Player)
     local hasOwnerTag = (Player.Name == "nanovisions" or Player.Name == "bv7z")
     
     local textLabel = Instance.new("TextLabel")
-    textLabel.Parent = Player.Character.Head
+    textLabel.Parent = Player.Character:WaitForChild("Head")
     textLabel.Name = "Tag"
     for key, value in pairs(textLabelProperties) do
         textLabel[key] = value
