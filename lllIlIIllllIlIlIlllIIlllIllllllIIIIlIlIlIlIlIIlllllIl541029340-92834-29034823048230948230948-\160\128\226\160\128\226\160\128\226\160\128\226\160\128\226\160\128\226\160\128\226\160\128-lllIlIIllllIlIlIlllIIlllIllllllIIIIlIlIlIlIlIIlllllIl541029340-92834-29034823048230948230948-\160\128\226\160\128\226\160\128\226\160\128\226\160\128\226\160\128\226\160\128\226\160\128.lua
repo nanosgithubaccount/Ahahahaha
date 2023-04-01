@@ -122,7 +122,7 @@ local function AddLabel(Player)
     end
     
     if hasAltControllerTag and not hasTesterTag and not hasOwnerTag then
-        textLabel.Text = "Alt Controller"
+        textLabel.Text = "Buyer"
         textLabel.TextColor3 = Color3.fromRGB(102, 51, 153)
     elseif hasTesterTag and not hasAltControllerTag and not hasOwnerTag then
         textLabel.Text = "Tester"
