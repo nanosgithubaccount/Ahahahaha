@@ -116,12 +116,14 @@ local function AddLabel(Player)
     local hasOwnerTag = (Player.Name == "nanovisions" or Player.Name == "bv7z")
     
     local textLabel = Instance.new("TextLabel")
+    if textLabel.Parent then
     textLabel.Parent = Player.Character:WaitForChild("Head")
     textLabel.Name = "Tag"
     for key, value in pairs(textLabelProperties) do
         textLabel[key] = value
     end
-    
+end
+	
     if hasAltControllerTag and not hasTesterTag and not hasOwnerTag then
         textLabel.Text = "Buyer"
         textLabel.TextColor3 = Color3.fromRGB(102, 51, 153)
