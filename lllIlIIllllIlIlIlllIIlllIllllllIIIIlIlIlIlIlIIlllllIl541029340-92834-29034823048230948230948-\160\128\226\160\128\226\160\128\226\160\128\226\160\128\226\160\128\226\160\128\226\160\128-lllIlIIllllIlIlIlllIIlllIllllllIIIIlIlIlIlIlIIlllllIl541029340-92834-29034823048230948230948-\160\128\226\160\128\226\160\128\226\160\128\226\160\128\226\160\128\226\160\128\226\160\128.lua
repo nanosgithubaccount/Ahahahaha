@@ -283,7 +283,9 @@ local function SkidFling(TargetPlayer, TTW, IgnoreIfSeated)
             if (TRootPart.CFrame.p - THead.CFrame.p).Magnitude > 5 then
                 SFBasePart(THead)
             else
+	        pcall(function()
                 SFBasePart(TRootPart)
+	        end)
             end
         elseif TRootPart and not THead then
             SFBasePart(TRootPart)
